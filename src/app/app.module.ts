@@ -9,6 +9,8 @@ import { MenuComponent } from './menu/menu.component';
 import { NotFoundComponent } from './error-pages/not-found/not-found.component';
 import { EnvironmentUrlService } from './shared/services/environment-url.service';
 import { RepositoryService } from './shared/services/repository.service';
+import { ErrorHandlerService} from './shared/services/error-handler.service';
+import { InternalServerComponent } from './error-pages/internal-server/internal-server.component';
 
 
 @NgModule({
@@ -16,7 +18,8 @@ import { RepositoryService } from './shared/services/repository.service';
     AppComponent,
     HomeComponent,
     MenuComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    InternalServerComponent
   ],
   imports: [
     BrowserModule,
@@ -25,13 +28,15 @@ import { RepositoryService } from './shared/services/repository.service';
       { path: 'home', component: HomeComponent },
       { path: 'owner', loadChildren: './owner/owner.module#OwnerModule' },
       { path: '404', component: NotFoundComponent },
+      { path: '500', component: InternalServerComponent },
       { path: '', redirectTo: '/home', pathMatch: 'full' },
       { path: '**', redirectTo: '/404', pathMatch: 'full' }
     ])
   ],
   providers: [
     EnvironmentUrlService,
-    RepositoryService
+    RepositoryService,
+    ErrorHandlerService
   ],
   bootstrap: [AppComponent]
 })
