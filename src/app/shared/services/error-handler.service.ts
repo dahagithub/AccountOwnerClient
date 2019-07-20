@@ -8,7 +8,8 @@ export class ErrorHandlerService {
     constructor(private router: Router) { }
 
     public handleError(error: HttpErrorResponse) {
-        if (error.status === 500) {
+        if (error.
+            status === 500) {
             this.handle500Error(error);
         } else if (error.status === 404) {
             this.handle404Error(error);
@@ -30,7 +31,7 @@ export class ErrorHandlerService {
 
     private handleOtherError(error: HttpErrorResponse) {
         this.createErrorMessage(error);
-        // TODO this will be fixed later
+        // TODO add other error page
     }
 
 

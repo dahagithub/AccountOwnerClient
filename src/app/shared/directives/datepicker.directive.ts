@@ -13,8 +13,8 @@ export class DatepickerDirective implements OnInit {
         $(this.elementRef.nativeElement).datepicker({
             dateFormat: 'mm/dd/yy',
             changeYear: true,
-            yearRange: "-100:+0",
-            onSelect: (dateText) => { this.change.emit(dateText) }
+            yearRange: '-100:+0',
+            onSelect: (dateText) => { this.change.emit(dateText); }
         });
 
     }
