@@ -34,4 +34,9 @@ export class OwnerListComponent implements OnInit {
     let detailsUrl: string = `/owner/details/${id}`;
     this.router.navigate([detailsUrl]);
   }
+
+  public redirectToUpdatePage(id){
+    let updateUrl: string = `/owner/update/${id}`;
+    this.router.navigate([updateUrl]);
+  }
 }

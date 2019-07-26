@@ -11,6 +11,7 @@ import { EnvironmentUrlService } from './shared/services/environment-url.service
 import { RepositoryService } from './shared/services/repository.service';
 import { ErrorHandlerService} from './shared/services/error-handler.service';
 import { InternalServerComponent } from './error-pages/internal-server/internal-server.component';
+import {DatePipe} from '@angular/common';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { InternalServerComponent } from './error-pages/internal-server/internal-
   providers: [
     EnvironmentUrlService,
     RepositoryService,
-    ErrorHandlerService
+    ErrorHandlerService,
+    DatePipe
   ],
   bootstrap: [AppComponent]
 })
